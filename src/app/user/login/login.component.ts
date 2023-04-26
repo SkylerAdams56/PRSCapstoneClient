@@ -25,7 +25,7 @@ export class LoginComponent {
       next:(res) =>{
         console.debug("Login Successful");
         this.sys.loggedInUser = res;
-        this.router.navigateByUrl("/home");
+        this.router.navigateByUrl("/user/list");
       }
     })
   }
