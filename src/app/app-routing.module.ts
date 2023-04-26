@@ -7,6 +7,7 @@ import { LoginComponent } from './user/login/login.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
+import { UserChangeComponent } from './user/user-change/user-change.component';
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: HomeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: "user/list", component: UserListComponent },
   { path: "user/detail/:id", component: UserDetailComponent },
   { path: "user/create", component: UserCreateComponent },
+  { path: "user/change/:id", component: UserChangeComponent },
   { path: "**", component: E404Component }
 
 ];
