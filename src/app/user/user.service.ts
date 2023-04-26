@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from './user.class';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +13,10 @@ export class UserService {
   constructor(
     private http: HttpClient
   ) { }
+  login(username:string, password: string): Observable<User>{
+    return this.http.get(`${this.baseurl}/${username}/${password}`) as Observable<User>;
+  }
+
   list(): Observable<User[]>{
     return this.http.get(`${this.baseurl}`) as Observable<User[]>
   }

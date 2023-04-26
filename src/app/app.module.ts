@@ -9,6 +9,8 @@ import { HomeComponent } from './core/home/home.component';
 import { AboutComponent } from './core/about/about.component';
 import { E404Component } from './core/e404/e404.component';
 import { MenuComponent } from './menu/menu/menu.component';
+import { LoginComponent } from './user/login/login.component';
+import { UserListComponent } from './user/user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { MenuComponent } from './menu/menu/menu.component';
     HomeComponent,
     AboutComponent,
     E404Component,
-    MenuComponent
+    MenuComponent,
+    LoginComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
