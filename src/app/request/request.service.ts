@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import{ Request } from './request.class'
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,9 +9,11 @@ import { Observable } from 'rxjs';
 export class RequestService {
 
   baseurl: string="http://localhost:5000/api/requests";
+
   constructor(
     private http: HttpClient
   ) { }
+  
   list(): Observable<Request[]>{
     return this.http.get(`${this.baseurl}`) as Observable<Request[]>
   }

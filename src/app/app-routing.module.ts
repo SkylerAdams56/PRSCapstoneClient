@@ -12,6 +12,7 @@ import { VendorListComponent } from './vendor/vendor-list/vendor-list.component'
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
 import { VendorChangeComponent } from './vendor/vendor-change/vendor-change.component';
 import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
+import { RequestListComponent } from './request/request-list/request-list.component';
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: HomeComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: "vendor/detail/:id", component: VendorDetailComponent },
   { path: "vendor/change/:id", component: VendorChangeComponent },
   { path: "vendor/create", component: VendorCreateComponent },
+  { path: "request/list", component: RequestListComponent },
   { path: "**", component: E404Component }
 
 ];
