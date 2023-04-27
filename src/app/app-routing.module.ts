@@ -13,6 +13,10 @@ import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.comp
 import { VendorChangeComponent } from './vendor/vendor-change/vendor-change.component';
 import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
 import { RequestListComponent } from './request/request-list/request-list.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { ProductChangeComponent } from './product/product-change/product-change.component';
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: HomeComponent },
@@ -27,6 +31,10 @@ const routes: Routes = [
   { path: "vendor/change/:id", component: VendorChangeComponent },
   { path: "vendor/create", component: VendorCreateComponent },
   { path: "request/list", component: RequestListComponent },
+  { path: "product/list", component: ProductListComponent },
+  { path: "product/detail/:id", component: ProductDetailComponent },
+  { path: "product/create", component: ProductCreateComponent },
+  { path: "product/change/:id", component: ProductChangeComponent },
   { path: "**", component: E404Component }
 
 ];

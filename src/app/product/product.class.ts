@@ -1,4 +1,5 @@
 import { Vendor } from "../vendor/vendor.class";
+import { ProductService } from "./product.service";
 
 export class Product{
     id: number = 0;

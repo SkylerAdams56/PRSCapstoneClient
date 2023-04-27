@@ -22,7 +22,7 @@ export class UserListComponent {
     if(this.sys.loggedInUser !== null){
       console.log("Someone is logged in!");
     } else {
-      console.log("No onse is logged in..");
+      console.log("No one is logged in..");
     }
     this.userSvc.list().subscribe({
       next: (res) => {
