@@ -22,9 +22,6 @@ export class ProductListComponent {
       next: (res) => {
         console.debug("Orders:", res);
         this.products = res;
-        for(let p of this.products){
-          p.name = p.vendor !== null ? p.vendor.name : "No Customer";
-        }
       },
       error: (err) =>{
         console.error(err);

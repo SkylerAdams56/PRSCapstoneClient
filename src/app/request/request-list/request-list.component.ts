@@ -40,7 +40,7 @@ export class RequestListComponent {
         console.debug("Orders:", res);
         this.requests = res;
         for(let r of this.requests){
-          r.userName = r.user !== null ? r.user.firstname : "No Customer";
+          r.userName = r.user !== null ? r.user.firstname : "No User";
         }
       },
       error: (err) =>{

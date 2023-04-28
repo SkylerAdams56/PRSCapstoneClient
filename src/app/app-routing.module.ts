@@ -17,6 +17,9 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ProductCreateComponent } from './product/product-create/product-create.component';
 import { ProductChangeComponent } from './product/product-change/product-change.component';
+import { RequestDetailComponent } from './request/request-detail/request-detail.component';
+import { RequestCreateComponent } from './request/request-create/request-create.component';
+import { RequestChangeComponent } from './request/request-change/request-change.component';
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: HomeComponent },
@@ -31,6 +34,9 @@ const routes: Routes = [
   { path: "vendor/change/:id", component: VendorChangeComponent },
   { path: "vendor/create", component: VendorCreateComponent },
   { path: "request/list", component: RequestListComponent },
+  { path: "request/detail/:id", component: RequestDetailComponent },
+  { path: "request/create", component: RequestCreateComponent },
+  { path: "request/change/:id", component: RequestChangeComponent },
   { path: "product/list", component: ProductListComponent },
   { path: "product/detail/:id", component: ProductDetailComponent },
   { path: "product/create", component: ProductCreateComponent },

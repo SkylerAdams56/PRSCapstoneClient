@@ -11,7 +11,7 @@ export class Request{
     total: number = 0;
     requestLines!: Requestline[];
 
-    userId: number = 0;
+    userId: number | undefined;
     user: User | null=null;
     userName!:string;
 }

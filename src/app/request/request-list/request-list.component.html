@@ -22,21 +22,21 @@
         <tbody>
             <tr *ngFor="let r of requests">
                 <td>{{ r.id }}</td>
-                <td>{{ r.description | date}}</td>
+                <td>{{ r.description}}</td>
                 <td>{{ r.justification }}</td>
                 <td>{{ r.rejectionReason }}</td>
-                <td>{{ r.deliveryMode | currency}}</td>
+                <td>{{ r.deliveryMode}}</td>
                 <td>{{ r.status }}</td>
                 <td>{{ r.total }}</td>
                 <td>{{ r.user?.username }}</td>
                 <td>
-                    <a routerLink="/order/detail/{{r.id}}" class="btn btn-primary">Detail</a>
+                    <a routerLink="/request/detail/{{r.id}}" class="btn btn-primary">Detail</a>
                     <span> | </span>
-                    <a routerLink="/order/change/{{r.id}}" class="btn btn-primary">Change</a>
+                    <a routerLink="/request/change/{{r.id}}" class="btn btn-primary">Change</a>
                     <span> | </span>
                     <button (click)="review(r)" class="btn btn-primary">Review</button>
                     <span> | </span>
-                    <a routerLink="/order/lines/{{r.id}}" class="btn btn-primary">Lines</a>
+                    <a routerLink="/request/lines/{{r.id}}" class="btn btn-primary">Lines</a>
                 </td>
             </tr>
         </tbody>
