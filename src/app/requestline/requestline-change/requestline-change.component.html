@@ -12,12 +12,15 @@
                 </tr>
                 <tr>
                     <td>Quantity</td>
-                    <td><input [(ngModel)]="requestLine.quantity"></td>
+                    <td><input [(ngModel)]="requestLine.quantity" type="number"></td>
                 </tr>
                 <tr>
                     <td>Products</td>
-                    <td><select [(ngModel)]="requestLine.productId">
-                        <option *ngFor="let p of products" value="{{p.id}}">{{ p.name }}</option></select></td>
+                    <td>
+                        <select [(ngModel)]="requestLine.productId">
+                            <option *ngFor="let p of products" value="{{p.id}}">{{ p.name }}</option>
+                        </select>
+                    </td>
                 </tr>
             </tbody>
         </table>
