@@ -1,0 +1,61 @@
+<div id="Component">
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{pageTitle}}</span> 
+    </header>
+    <table class="table table-striped table-sm ">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>RejectionReason</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Username</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ request.id }}</td>
+                <td>{{ request.description}}</td>
+                <td>{{ request.rejectionReason }}</td>
+                <td>{{ request.status }}</td>
+                <td>{{ request.total | currency }}</td>
+                <td>{{ request.userName }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Line Total</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="request && request.requestLines">
+            <tr *ngFor="let rl of request.requestLines">
+                <td>{{rl.id}}</td>
+                <td>{{rl.product?.name}}</td>
+                <td>{{rl.product?.price | currency}}</td>
+                <td>{{rl.quantity}}</td>
+                <td>{{rl.quantity * (rl.product === null ? 0 : rl.product.price)}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button (click)="Approve(request)" class="btn btn-primary">Approve</button>
+        <span> | </span>
+        <button (click)="Reject(request)" class="btn btn-danger">Reject</button>
+        <span> | </span>
+        <span *ngIf="showVerifyReject">
+        <button (click)="VerifyReject(request)" class="btn btn-danger">Verify Reject</button>
+        <table>
+        <td><input [(ngModel)]="request.rejectionReason"></td>
+        </table>       
+     </span>
+    </div>
+</div>
+

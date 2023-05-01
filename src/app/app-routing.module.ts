@@ -23,6 +23,8 @@ import { RequestChangeComponent } from './request/request-change/request-change.
 import { RequestLinesComponent } from './request/request-lines/request-lines.component';
 import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
 import { RequestlineChangeComponent } from './requestline/requestline-change/requestline-change.component';
+import { RequestReviewComponent } from './request/request-review/request-review.component';
+import { RequestReviewApproverejectComponent } from './request/request-review-approvereject/request-review-approvereject.component';
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: HomeComponent },
@@ -41,6 +43,8 @@ const routes: Routes = [
   { path: "request/create", component: RequestCreateComponent },
   { path: "request/change/:id", component: RequestChangeComponent },
   { path: "request/lines/:id", component: RequestLinesComponent },
+  { path: "review/list", component: RequestReviewComponent },
+  { path: "review/list/approve/reject/:id", component: RequestReviewApproverejectComponent },
   { path: "product/list", component: ProductListComponent },
   { path: "product/detail/:id", component: ProductDetailComponent },
   { path: "product/create", component: ProductCreateComponent },
