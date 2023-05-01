@@ -1,0 +1,62 @@
+<div id="Component">
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{pageTitle}}</span> 
+    </header>
+    <table class="table table-striped table-sm " *ngIf="request">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Justification</th>
+                <th>RejectionReason</th>
+                <th>DeliveryMode</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ request.id }}</td>
+                <td>{{ request.description}}</td>
+                <td>{{ request.justification }}</td>
+                <td>{{ request.rejectionReason }}</td>
+                <td>{{ request.deliveryMode}}</td>
+                <td>{{ request.status }}</td>
+                <td>{{ request.total | currency }}</td>
+                <td>
+                    <button (click)="review()" class="btn btn-primary">Review</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a *ngIf="request" routerLink="/requestline/create/{{request.id}}" class="btn btn-primary">Create New</a>
+    <table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Line Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="request && request.requestLines">
+            <tr *ngFor="let rl of request.requestLines">
+                <td>{{rl.id}}</td>
+                <td>{{rl.product?.name}}</td>
+                <td>{{rl.product?.price | currency}}</td>
+                <td>{{rl.quantity}}</td>
+                <td>{{rl.quantity * (rl.product === null ? 0 : rl.product.price)}}</td>
+                <td>
+                    <a routerLink="/requestline/change/{{rl.id}}" class="btn btn-primary">Change</a>
+                    <span> | </span>
+                    <button (click)="remove()" class="btn btn-danger">Remove</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

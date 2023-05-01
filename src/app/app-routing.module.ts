@@ -20,6 +20,9 @@ import { ProductChangeComponent } from './product/product-change/product-change.
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestChangeComponent } from './request/request-change/request-change.component';
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
+import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
+import { RequestlineChangeComponent } from './requestline/requestline-change/requestline-change.component';
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: HomeComponent },
@@ -37,10 +40,13 @@ const routes: Routes = [
   { path: "request/detail/:id", component: RequestDetailComponent },
   { path: "request/create", component: RequestCreateComponent },
   { path: "request/change/:id", component: RequestChangeComponent },
+  { path: "request/lines/:id", component: RequestLinesComponent },
   { path: "product/list", component: ProductListComponent },
   { path: "product/detail/:id", component: ProductDetailComponent },
   { path: "product/create", component: ProductCreateComponent },
   { path: "product/change/:id", component: ProductChangeComponent },
+  { path: "requestline/create/:id", component: RequestlineCreateComponent },
+  { path: "requestline/change/:id", component: RequestlineChangeComponent },
   { path: "**", component: E404Component }
 
 ];
