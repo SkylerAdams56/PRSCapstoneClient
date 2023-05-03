@@ -24,7 +24,7 @@ export class ProductChangeComponent {
   ){}
 
   save(): void{
-    this.product.vendorId = +this.product.vendorId;
+    this.product.vendorId = Number(this.product.vendorId);
     console.debug("Product:", this.product);
     this.proSvc.change(this.product).subscribe({
       next: (res) => {

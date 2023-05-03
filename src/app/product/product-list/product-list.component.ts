@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from '../product.class';
-import { SystemService } from 'src/app/core/system.service';
 import { ProductService } from '../product.service';
-import { VendorService } from 'src/app/vendor/vendor.service';
-import { Vendor } from 'src/app/vendor/vendor.class';
 
 @Component({
   selector: 'app-product-list',
@@ -14,36 +11,25 @@ export class ProductListComponent {
 
   pageTitle="Product List";
   products: Product[]=[];
-  vendors: Vendor[]=[];
   constructor(
-    private sys: SystemService,
-    private proSvc: ProductService,
-    private venSvc: VendorService
+    private proSvc: ProductService
 
   ){}
 
-  refresh():void{
+  ngOnInit():void{
     this.proSvc.list().subscribe({
       next: (res) => {
-        console.debug("Orders:", res);
+        console.debug("Products:", res);
         this.products = res;
+        for(let p of this.products){
+          console.log('vendor:', p.vendor)
+          p.vendorName = p.vendor !== null ? p.vendor.name : "No Vendor";
+        }
       },
       error: (err) =>{
         console.error(err);
       }
     });
-    this.venSvc.list().subscribe({
-      next: (res) => {
-        console.debug("Orders:", res);
-        this.vendors = res;
-      },
-      error: (err) =>{
-        console.error(err);
-      }
-    })
+   }
   }
 
-  ngOnInit():void{
-    this.refresh();
-  }
-}

@@ -26,7 +26,7 @@
                 <td>{{ r.total }}</td>
                 <td>{{ r.user?.username }}</td>
                 <td>
-                    <a routerLink="/review/list/approve/reject/{{r.id}}" class="btn btn-primary">Review</a>
+                    <button routerLink="/review/list/approve/reject/{{r.id}}" class="btn btn-primary" (click)="review(r)">Review</button>
                 </td>
             </tr>
         </tbody>

@@ -26,11 +26,12 @@
                 <td>{{ p.price }}</td>
                 <td>{{ p.unit }}</td>
                 <td>{{ p.photoPath }}</td>
-                <td>{{ p.vendor?.code }}</td>
+                <td>{{ p.vendorName }}</td>
                 <td>
                     <a routerLink="/product/detail/{{p.id}}" class="btn btn-primary">Detail</a>
                     <span> | </span>
                     <a routerLink="/product/change/{{p.id}}" class="btn btn-primary">Change</a>
+                    
                 </td>
             </tr>
         </tbody>
